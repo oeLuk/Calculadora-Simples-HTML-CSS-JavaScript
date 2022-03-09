@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora HTML/CSS/JavaScript</title>
+    <style>
+        body{
+            font: normal 18pt Arial; /*Define a fonte, tamanho da letra e o tipo de todos do body/HTML*/
+        }
+        input{/*Seleciona os iputs*/
+            font: normal 18pt Arial;/*Define a fonte, tamanho da letra e o tipo de todos do input*/
+            width: 150px;/*Define a quantidade de pixels do input*/
+        }
+        div#res{/*Buscou a div com o elemento id representado por # e a div id="res"*/
+            margin-top: 20px; /*Define a margem, o local que ficará o resultado*/
+        }
+    </style>
+</head>
+<body>
+    <h3>Adição</h3>
+    <!--Input de numero identificado por id. Input de botão identuficado por id-->
+    <input type="number" name="" id="ad1"> + <!--Input de numero identificado por id-->
+    <input type="number" name="" id="ad2">
+    <input type="button" value="Somar" onclick="somar()"><!--Input de botão identuficado por id e evento click-->
+    <div id="ressoma">Resultado</div><!--Mostrara o resultado-->
+
+    <h3>Subtração</h3>
+    <input type="number" name="" id="sub1"> -
+    <input type="number" name="" id="sub2">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <div id="ressub">Resultado</div>
+
+    <h3>Multiplicação</h3>
+    <input type="number" name="" id="mult1"> *
+    <input type="number" name="" id="mult2" >
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <div id="resmult">Resultado</div>
+
+    <h3>Divisão</h3>
+    <input type="number" name="" id="div1"> /
+    <input type="number" name="" id="div2">
+    <input type="button" value="Dividir" onclick="dividir()">
+    <div id="resdiv">Resultado</div>
+
+
+    <script>
+        function somar(){//Chama o evento click 
+            let soma1 = window.document.querySelector('input#ad1')//Recebe o valor do input numero
+            let soma2 = window.document.querySelector('input#ad2')
+            let dsoma = window.document.querySelector('div#ressoma')//Recebe a div
+            let n1 = Number(soma1.value)//Converte a string em numero e atribui o valor ao n1
+            let n2 = Number(soma2.value)
+            let ca1 = n1 + n2//Calcula as entradas
+            dsoma.innerHTML = `A soma de ${n1} e ${n2} é igual a: <strong>${ca1}</strong>`//Substitui a div e mostra o resultado na tela
+        }
+        function subtrair(){
+            let subt1 = window.document.querySelector('input#sub1') 
+            let subt2 = window.document.querySelector('input#sub2')
+            let dsub = window.document.querySelector('div#ressub')
+            let nu1 = Number(subt1.value)
+            let nu2 = Number(subt2.value)
+            let cal2 = nu1 - nu2
+            dsub.innerHTML = `A subtração de ${nu1} e ${nu2} é igual a: <strong>${cal2}</strong>`
+        }
+        function multiplicar(){
+            let multp1 = window.document.querySelector('input#mult1')
+            let multp2 = window.document.querySelector('input#mult2')
+            let dmult = window.document.querySelector('div#resmult')
+            let num1 = Number(multp1.value)
+            let num2 = Number(multp2.value)
+            let cal3 = num1 * num2
+            dmult.innerHTML = `A multiplicação de ${num1} e ${num2} é igual a: <strong>${cal3}</strong>`
+        }
+        function dividir(){
+            let divi1 = window.document.querySelector('input#div1')
+            let divi2 = window.document.querySelector('input#div2')
+            let ddiv = window.document.querySelector('div#resdiv')
+            let nume1 = Number(divi1.value)
+            let nume2 = Number(divi2.value)
+            let cal4 = nume1 / nume2
+            ddiv.innerHTML = `A divisão de ${nume1} e ${nume2} é igual a: <strong>${cal4}</strong>`
+        }
+    </script>
+</body>
+</html>
